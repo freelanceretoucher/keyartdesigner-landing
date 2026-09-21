@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Key Art Designer — Poster &amp; Key Art Reference Library</title>
+  <meta name="description" content="Browse key art, posters and title treatments from film, TV and streaming for reference and inspiration. Filter by genre, year and colour, save boards, and export curated PDF reference sheets." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0a0a%22/><path d=%22M58 20 L27 55 L44 55 L37 80 L74 42 L52 42 Z%22 fill=%22%23f2c230%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink-950: #0a0a0a;
+      --ink-900: #111318;
+      --ink-800: #181b22;
+      --ink-700: #22262f;
+      --ink-600: #2d323d;
+      --ink-400: #7b8190;
+      --gold-500: #f2c230;
+      --gold-400: #f5cd53;
+      --text: #e8e9ec;
+    }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      background: var(--ink-950);
+      color: var(--text);
+      font-family: 'Oswald', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    .display { font-family: 'Bebas Neue', 'Oswald', sans-serif; letter-spacing: 0.02em; }
+    .wrap { max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+
+    /* Nav */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(10,10,10,0.85); backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--ink-700);
+    }
+    nav.wrap { display: flex; align-items: center; justify-content: space-between; padding: 14px 20px; }
+    .logo { display: flex; align-items: center; gap: 10px; }
+    .logo svg { display: block; }
+    .logo span { font-size: 22px; }
+    .logo .gold { color: var(--gold-500); }
+    .navlinks { display: flex; align-items: center; gap: 28px; font-size: 14px; }
+    .navlinks a.muted { color: var(--ink-400); }
+    .navlinks a.muted:hover { color: var(--text); }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--gold-500); color: var(--ink-950);
+      padding: 9px 18px; border-radius: 999px; font-weight: 600; font-size: 14px;
+      transition: background 0.15s;
+    }
+    .btn:hover { background: var(--gold-400); }
+    .btn-ghost {
+      border: 1px solid var(--ink-600); color: var(--text);
+      padding: 9px 18px; border-radius: 999px; font-size: 14px;
+    }
+    .btn-ghost:hover { border-color: var(--ink-400); }
+    @media (max-width: 640px) {
+      .navlinks .hide-mobile { display: none; }
+    }
+
+    /* Hero */
+    .hero { padding: 90px 0 60px; text-align: center; position: relative; overflow: hidden; }
+    .hero::before {
+      content: ""; position: absolute; inset: -20% -10% auto -10%; height: 500px;
+      background: radial-gradient(ellipse at center, rgba(242,194,48,0.14), transparent 65%);
+      pointer-events: none;
+    }
+    .eyebrow {
+      display: inline-block; font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+      color: var(--gold-400); border: 1px solid rgba(242,194,48,0.35); background: rgba(242,194,48,0.08);
+      padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
+    }
+    h1.hero-title {
+      font-size: clamp(40px, 7vw, 78px); line-height: 0.98; margin: 0 auto 22px; max-width: 900px;
+      text-wrap: balance;
+    }
+    h1.hero-title .gold { color: var(--gold-500); }
+    .hero p.sub {
+      max-width: 560px; margin: 0 auto 34px; color: #b7bac3; font-size: 17px; line-height: 1.6;
+    }
+    .hero-ctas { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-lg { padding: 13px 26px; font-size: 15px; }
+
+    /* Hero screenshot, framed like a browser window */
+    .shot-frame {
+      margin: 64px auto 0; max-width: 1040px; padding: 0 20px;
+    }
+    .shot-frame .chrome {
+      border: 1px solid var(--ink-700); border-radius: 14px 14px 0 0; overflow: hidden;
+      background: var(--ink-900); box-shadow: 0 40px 80px -30px rgba(0,0,0,0.7);
+    }
+    .shot-frame .bar { display: flex; align-items: center; gap: 6px; padding: 11px 14px; border-bottom: 1px solid var(--ink-700); }
+    .shot-frame .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-600); }
+    .shot-frame img { display: block; width: 100%; height: auto; }
+
+    /* Sections */
+    section { padding: 76px 0; }
+    .section-head { text-align: center; max-width: 620px; margin: 0 auto 48px; }
+    .section-head .eyebrow { margin-bottom: 16px; }
+    .section-head h2 { font-size: clamp(30px, 4vw, 44px); margin: 0 0 14px; text-wrap: balance; }
+    .section-head p { color: #a9adb8; font-size: 15.5px; line-height: 1.6; margin: 0; }
+
+    .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    @media (max-width: 860px) { .grid3 { grid-template-columns: 1fr; } }
+    .card {
+      background: var(--ink-900); border: 1px solid var(--ink-700); border-radius: 16px; padding: 26px;
+    }
+    .card .icon {
+      width: 40px; height: 40px; border-radius: 10px; background: rgba(242,194,48,0.12);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 18px;
+      color: var(--gold-500);
+    }
+    .card h3 { font-size: 19px; margin: 0 0 8px; font-family: 'Oswald', sans-serif; font-weight: 600; }
+    .card p { color: #a9adb8; font-size: 14.5px; line-height: 1.6; margin: 0; }
+
+    .split {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    }
+    @media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+    .split h2 { font-size: clamp(28px, 4vw, 38px); margin: 0 0 16px; text-wrap: balance; }
+    .split p { color: #a9adb8; line-height: 1.65; font-size: 15.5px; margin: 0 0 24px; }
+    .checklist { list-style: none; padding: 0; margin: 0 0 28px; display: grid; gap: 12px; }
+    .checklist li { display: flex; gap: 10px; align-items: flex-start; font-size: 14.5px; color: #d3d5da; }
+    .checklist svg { flex-shrink: 0; margin-top: 3px; color: var(--gold-500); }
+    .mockup {
+      border: 1px solid var(--ink-700); border-radius: 16px; overflow: hidden; background: var(--ink-900);
+      box-shadow: 0 30px 60px -25px rgba(0,0,0,0.6);
+    }
+    .mockup .bar { display: flex; gap: 6px; padding: 12px 14px; border-bottom: 1px solid var(--ink-700); }
+    .mockup .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--ink-600); }
+    .mockup img { display: block; width: 100%; height: auto; }
+
+    /* CTA band */
+    .cta-band {
+      background: linear-gradient(135deg, var(--ink-900), var(--ink-950));
+      border-top: 1px solid var(--ink-700); border-bottom: 1px solid var(--ink-700);
+      text-align: center; padding: 80px 0;
+    }
+    .cta-band h2 { font-size: clamp(30px, 5vw, 46px); margin: 0 0 16px; text-wrap: balance; }
+    .cta-band p { color: #a9adb8; max-width: 480px; margin: 0 auto 30px; font-size: 15.5px; }
+
+    /* Footer */
+    footer { border-top: 1px solid var(--ink-700); padding: 40px 0; }
+    footer .wrap { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    footer .fmuted { color: var(--ink-400); font-size: 13px; }
+    footer .flinks { display: flex; gap: 22px; font-size: 13px; color: var(--ink-400); }
+    footer .flinks a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="wrap">
+      <a href="#top" class="logo">
+        <svg width="22" height="29" viewBox="0 0 26 34"><path d="M15 0 L2 19 L11 19 L8 34 L24 14 L14 14 Z" fill="#f2c230" /></svg>
+        <span class="display"><span class="gold">KEY ART</span> DESIGNER</span>
+      </a>
+      <div class="navlinks">
+        <a href="#features" class="muted hide-mobile">Features</a>
+        <a href="#workflow" class="muted hide-mobile">Workflow</a>
+        <a href="#about" class="muted hide-mobile">About</a>
+        <a href="https://app.keyartdesigner.com" class="btn">Open the tool</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap">
+        <span class="eyebrow">Free reference &amp; inspiration tool</span>
+        <h1 class="hero-title">Every key art,<br /><span class="gold">one search away.</span></h1>
+        <p class="sub">
+          Browse posters, key art and title treatments from film, TV and streaming — filter by genre, year, colour
+          and rating, save boards, and pull curated PDF reference sheets straight into your next comp.
+        </p>
+        <div class="hero-ctas">
+          <a href="https://app.keyartdesigner.com" class="btn btn-lg">Browse the library →</a>
+          <a href="#features" class="btn-ghost btn-lg">See what it does</a>
+        </div>
+      </div>
+
+      <div class="shot-frame" aria-hidden="true">
+        <div class="chrome">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <img src="app-screenshot.jpg" alt="" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="features">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Built for the work</span>
+          <h2>Not another mood board dump.</h2>
+          <p>A reference library shaped around how key art actually gets made — search, filter, save, export.</p>
+        </div>
+        <div class="grid3">
+          <div class="card">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" /><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+            </div>
+            <h3>Search &amp; filter deep</h3>
+            <p>Genre, year, media type, minimum rating and dominant colour — narrow thousands of titles down to exactly the mood you're chasing.</p>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6 3h12a1 1 0 0 1 1 1v17l-7-4-7 4V4a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" /></svg>
+            </div>
+            <h3>Boards &amp; watchlists</h3>
+            <p>Save references into named boards as you browse, come back to them anytime, and keep separate lists for different projects or pitches.</p>
+          </div>
+          <div class="card">
+            <div class="icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            </div>
+            <h3>Export a PDF reference sheet</h3>
+            <p>Select a handful of posters and download a single, print-quality PDF — ready to drop straight into your Photoshop comp as visual reference.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="workflow">
+      <div class="wrap split">
+        <div>
+          <span class="eyebrow">How it fits your process</span>
+          <h2>From reference to comp, faster.</h2>
+          <p>
+            Key Art Designer exists because gathering reference before a job shouldn't eat the time you'd rather
+            spend designing. Pull a batch of references, export them, open Photoshop.
+          </p>
+          <ul class="checklist">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg> Browse thousands of posters and title treatments</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg> Filter by genre, year, colour and rating</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg> Save into boards, tick off a watchlist</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M20 6L9 17l-5-5" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg> Select a set and export one reference PDF</li>
+          </ul>
+          <a href="https://app.keyartdesigner.com" class="btn">Try it now →</a>
+        </div>
+        <div class="mockup" aria-hidden="true">
+          <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+          <img src="app-screenshot-detail.jpg" alt="" loading="lazy" />
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="wrap section-head" style="max-width:640px;">
+        <span class="eyebrow">Who's behind this</span>
+        <h2>Made by someone who does this for a living.</h2>
+        <p>
+          Key Art Designer is built and maintained by a working freelance key art finisher and retoucher —
+          not a stock-photo startup. It's the tool I wanted for my own reference gathering, made public.
+        </p>
+        <div style="margin-top:28px;">
+          <a href="https://freelanceretoucher.com" target="_blank" rel="noreferrer" class="btn-ghost">See the studio work →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2>Start pulling references.</h2>
+        <p>Free to use, no account required to browse.</p>
+        <a href="https://app.keyartdesigner.com" class="btn btn-lg">Open Key Art Designer →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="fmuted">© <span id="year"></span> Key Art Designer. Reference &amp; inspiration tool for the industry.</span>
+      <div class="flinks">
+        <a href="https://app.keyartdesigner.com">Open tool</a>
+        <a href="https://freelanceretoucher.com" target="_blank" rel="noreferrer">Studio</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
