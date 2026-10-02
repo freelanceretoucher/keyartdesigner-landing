@@ -108,11 +108,28 @@ header {
 .lightbox.open { display: flex; }
 .lightbox img { max-height: 90vh; max-width: 100%; width: auto; border-radius: 2px; }
 .lightbox-close {
-  position: fixed; top: 20px; right: 24px; z-index: 101;
-  width: 40px; height: 40px; border-radius: 999px;
-  background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
-  color: #fff; display: flex; align-items: center; justify-content: center;
-  cursor: pointer;
+  position: fixed; top: 16px; right: 20px; z-index: 102;
+  width: 48px; height: 48px;
+  background: none; border: none;
+  color: var(--gold-500); font-size: 30px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; transition: color 0.15s, transform 0.15s;
+}
+.lightbox-close:hover { color: var(--gold-400); transform: scale(1.08); }
+.lightbox-nav {
+  position: fixed; top: 50%; transform: translateY(-50%);
+  z-index: 101; background: none; border: none;
+  color: var(--gold-500); font-size: 60px; line-height: 1; font-family: 'Bebas Neue', sans-serif;
+  width: 64px; height: 88px;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0.8; transition: opacity 0.15s, color 0.15s;
+}
+.lightbox-nav:hover { opacity: 1; color: var(--gold-400); }
+.lightbox-prev { left: 4px; }
+.lightbox-next { right: 4px; }
+@media (max-width: 720px) {
+  .lightbox-nav { font-size: 44px; width: 48px; height: 72px; }
+  .lightbox-close { width: 44px; height: 44px; font-size: 26px; top: 10px; right: 12px; }
 }
 .lightbox-caption {
   position: fixed; bottom: 24px; left: 0; right: 0; text-align: center;
