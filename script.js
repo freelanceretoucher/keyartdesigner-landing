@@ -78,3 +78,31 @@
     }
   });
 })();
+
+// Grid density ("zoom") control for the mosaic — slide left for more,
+// smaller tiles; right for fewer, larger tiles. Value persists per visitor.
+(function () {
+  var mosaic = document.getElementById('mosaic');
+  var slider = document.getElementById('densitySlider');
+  if (!mosaic || !slider) return;
+
+  var isMobile = window.matchMedia('(max-width: 720px)').matches;
+  var defaultCols = isMobile ? 2 : 5;
+  var saved = null;
+  try { saved = localStorage.getItem('keyart-density'); } catch (e) {}
+  var cols = saved ? parseInt(saved, 10) : defaultCols;
+  if (!cols || cols < 1 || cols > 6) cols = defaultCols;
+
+  function apply(n) {
+    mosaic.style.setProperty('--cols', n);
+    slider.value = String(7 - n);
+  }
+
+  apply(cols);
+
+  slider.addEventListener('input', function () {
+    var newCols = 7 - parseInt(slider.value, 10);
+    mosaic.style.setProperty('--cols', newCols);
+    try { localStorage.setItem('keyart-density', String(newCols)); } catch (e) {}
+  });
+})();
