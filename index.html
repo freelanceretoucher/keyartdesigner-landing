@@ -304,10 +304,6 @@
         <figcaption>House of the Rising Sun</figcaption>
       </figure>
       <figure>
-        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1611414421408-SCQFZO7PKCDR9EI52SAN/TLATD_BG_02e_4B4A_15_thumb2.jpg?format=1000w" alt="The Living and the Dead" data-title="The Living and the Dead" />
-        <figcaption>The Living and the Dead</figcaption>
-      </figure>
-      <figure>
         <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1611427015137-UJRXHFCT4S9ZEXN4FTXH/TLATD_BG_02e_4B4A_final3+copy.jpg?format=1000w" alt="The Living and the Dead, final" data-title="The Living and the Dead" />
         <figcaption>The Living and the Dead</figcaption>
       </figure>
@@ -323,7 +319,56 @@
         <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/ce24ffcf-507f-4b48-959e-f093800d2d71/JN000095_BBCW_Dynasty_Showcase_wallart_04c_LR.jpg?format=1000w" alt="Dynasty — BBC Worldwide" data-title="Dynasty — BBC Worldwide" />
         <figcaption>Dynasty — BBC Worldwide</figcaption>
       </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/49720662-36de-400a-857c-b39417c27f2d/birdboxbarcelona%23universal-base_CONCEPT03_DA_R1_V1_01.jpg?format=1000w" alt="Bird Box Barcelona — Netflix, Arc de Triomf" data-title="Bird Box Barcelona" />
+        <figcaption>Bird Box Barcelona</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/667ebb75-35ac-4433-9a9f-69a18c2ced60/birdboxbarcelona%23universal-base_CONCEPT03_DA_R1_V2_01.jpg?format=1000w" alt="Bird Box Barcelona — Netflix, Sagrada Familia" data-title="Bird Box Barcelona" />
+        <figcaption>Bird Box Barcelona</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/cc24adfa-d69c-4283-96b0-2afe14ba4b5f/20ten_MC_CCXP_MC10__%4025%25_RGB_DA_1k_200DPI_w4b_LR.jpg?format=1000w" alt="A Minecraft Movie" data-title="A Minecraft Movie" />
+        <figcaption>A Minecraft Movie</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1a565fa0-7b00-4773-94d6-c7e1877f1c34/NEW_WHONIVERSE_IPLAYER_DA_w1d_THUMB_opt1.jpg?format=1000w" alt="BBC Whoniverse" data-title="BBC Whoniverse" />
+        <figcaption>BBC Whoniverse</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/e9745343-85ad-4afb-a48d-01997be23f71/Hip-Hop_Treasures_HORZ_3840x2160_3_ALT.jpg?format=1000w" alt="Hip Hop Treasures" data-title="Hip Hop Treasures" />
+        <figcaption>Hip Hop Treasures</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1659665e-1c4c-43c0-8f3d-5a56e0e7f28c/BBC-war_and_peace_Book-COVER.jpg?format=1000w" alt="War &amp; Peace — BBC Books cover" data-title="War &amp; Peace — BBC Books" />
+        <figcaption>War &amp; Peace — BBC Books</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1608988542945-GEQ1IGBXAMW6Z1YNPLUM/freelance%2Bretoucher%2Bcommercial%2Bretouching%2BRiver-Monsters.jpg?format=1000w" alt="River Monsters — Animal Planet" data-title="River Monsters" />
+        <figcaption>River Monsters</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/1608988544316-AZAUGY6X2DST72I2KV1N/freelance%2Bretoucher%2BSSGB-BBC.jpg?format=1000w" alt="SS-GB — BBC, alt crop" data-title="SS-GB — BBC" />
+        <figcaption>SS-GB — BBC</figcaption>
+      </figure>
+      <figure>
+        <img src="https://images.squarespace-cdn.com/content/v1/5d73d944bfc3b72a9a45781a/6681b56c-3fed-4f57-97ed-f978027f46f3/192_Reservation-Dogs_Outfront_14x48_R4_aag_C192_MASTER_W1.4_thumb2.jpg?format=1000w" alt="Reservation Dogs, vertical" data-title="Reservation Dogs" />
+        <figcaption>Reservation Dogs</figcaption>
+      </figure>
     </div>
+
+    <script>
+      (function () {
+        var m = document.getElementById('mosaic');
+        if (!m) return;
+        var figs = Array.prototype.slice.call(m.children);
+        for (var i = figs.length - 1; i > 0; i--) {
+          var j = Math.floor(Math.random() * (i + 1));
+          var tmp = figs[i]; figs[i] = figs[j]; figs[j] = tmp;
+        }
+        figs.forEach(function (f) { m.appendChild(f); });
+      })();
+    </script>
   </main>
 
   <div class="lightbox" id="lightbox">
