@@ -109,9 +109,9 @@ header {
 .lightbox img { max-height: 90vh; max-width: 100%; width: auto; border-radius: 2px; }
 .lightbox-close {
   position: fixed; top: 16px; right: 20px; z-index: 102;
-  width: 48px; height: 48px;
+  width: 58px; height: 58px;
   background: none; border: none;
-  color: var(--gold-500); font-size: 30px; line-height: 1;
+  color: var(--gold-500); font-size: 38px; line-height: 1;
   display: flex; align-items: center; justify-content: center;
   cursor: pointer; transition: color 0.15s, transform 0.15s;
 }
@@ -129,7 +129,7 @@ header {
 .lightbox-next { right: 4px; }
 @media (max-width: 720px) {
   .lightbox-nav { font-size: 44px; width: 48px; height: 72px; }
-  .lightbox-close { width: 44px; height: 44px; font-size: 26px; top: 10px; right: 12px; }
+  .lightbox-close { width: 50px; height: 50px; font-size: 30px; top: 10px; right: 12px; }
 }
 .lightbox-caption {
   position: fixed; bottom: 24px; left: 0; right: 0; text-align: center;
