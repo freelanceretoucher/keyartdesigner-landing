@@ -80,7 +80,7 @@ header {
 }
 
 .mosaic {
-  columns: var(--cols, 5) 160px;
+  columns: var(--cols, 5);
   column-gap: 0;
   background: var(--ink-950);
 }
@@ -111,7 +111,7 @@ header {
 }
 .mosaic figure:hover figcaption { opacity: 1; transform: translateY(0); }
 @media (max-width: 720px) {
-  .mosaic { columns: var(--cols, 2) 150px; }
+  .mosaic { columns: var(--cols, 2); }
   .mosaic figcaption { font-size: 13px; padding: 20px 10px 10px; }
 }
 
