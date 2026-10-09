@@ -1,0 +1,24 @@
+User-agent: *
+Allow: /
+
+# AI crawlers / assistants — explicitly allowed so the site can be cited
+# and summarised by AI search and chat assistants, not just classic search.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+Sitemap: https://keyartdesigner.com/sitemap.xml
