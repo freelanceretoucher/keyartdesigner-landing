@@ -205,13 +205,25 @@ header {
 .about-bio { font-size: 16px; line-height: 1.65; color: var(--text); opacity: 0.9; margin: 0; }
 
 .client-row {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 22px;
-  padding: 22px 0; margin-bottom: 48px;
+  display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 22px 30px;
+  padding: 28px 0; margin-bottom: 48px;
   border-top: 1px solid var(--ink-700); border-bottom: 1px solid var(--ink-700);
 }
-.client-row span {
-  font-family: 'Oswald', sans-serif; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-dim);
+.client-row img {
+  height: 26px; width: auto; max-width: 110px;
+  object-fit: contain; display: block;
+  opacity: 0.75; filter: grayscale(1);
+  transition: opacity 0.15s;
+}
+/* Logos pulled from freelanceretoucher.com with a white/light background
+   (Netflix, Taylor James, Artmachine, Prime Video) get inverted so the
+   background flips to black and the mark reads light-on-dark, matching
+   the ones that already shipped with a transparent/dark background. */
+.client-row img.invert { filter: grayscale(1) invert(1); }
+.client-row img:hover { opacity: 1; }
+@media (max-width: 560px) {
+  .client-row { gap: 18px 24px; padding: 22px 0; }
+  .client-row img { height: 20px; max-width: 86px; }
 }
 
 .contact-block { text-align: left; }
