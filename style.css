@@ -1,5 +1,5 @@
 :root {
-  --ink-950: #0a0a0a;
+  --ink-950: #000000;
   --ink-900: #111318;
   --ink-800: #181b22;
   --ink-700: #22262f;
@@ -191,7 +191,17 @@ header {
   z-index: 101;
 }
 
-.about-wrap { max-width: 560px; margin: 0 auto; padding: 72px 24px 96px; text-align: center; }
+.about-wrap { max-width: 1120px; margin: 0 auto; padding: 72px 24px 64px; }
+.about-columns {
+  display: grid; grid-template-columns: minmax(0, 480px) minmax(0, 1fr);
+  gap: 64px; align-items: start; padding-bottom: 56px;
+}
+.about-left { text-align: center; }
+.about-right { padding-top: 4px; }
+@media (max-width: 860px) {
+  .about-columns { grid-template-columns: 1fr; gap: 48px; }
+  .about-wrap { padding: 56px 20px 0; }
+}
 .about-photo {
   width: 160px; height: 160px; border-radius: 50%; margin: 0 auto 24px;
   object-fit: cover; display: block; border: 2px solid var(--gold-500);
@@ -206,7 +216,7 @@ header {
 
 .client-marquee {
   position: relative; overflow: hidden;
-  padding: 36px 0; margin: 0 calc(50% - 50vw) 48px;
+  padding: 36px 0; margin: 0 calc(50% - 50vw);
   border-top: 1px solid var(--ink-700); border-bottom: 1px solid var(--ink-700);
   -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
   mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);

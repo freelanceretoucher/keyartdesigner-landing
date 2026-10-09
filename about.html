@@ -41,18 +41,46 @@
 
   <main>
     <div class="about-wrap">
-      <img class="about-photo" src="about-photo.jpg" alt="Diego Angarita" width="160" height="160" />
-      <h1 class="about-name display">DIEGO ANGARITA</h1>
-      <p class="about-title">Key Art Designer, Movie Poster Finisher &amp; Creative Retoucher</p>
+      <div class="about-columns">
+        <div class="about-left">
+          <img class="about-photo" src="about-photo.jpg" alt="Diego Angarita" width="160" height="160" />
+          <h1 class="about-name display">DIEGO ANGARITA</h1>
+          <p class="about-title">Key Art Designer, Movie Poster Finisher &amp; Creative Retoucher</p>
 
-      <div class="about-bio-block">
-        <p class="about-bio">I'm a freelance key art designer and creative retoucher based in the UK. I work digitally: compositing and retouching, no hand painting or photography of my own. My work's been recognised in Lürzer's Archive's "200 Best Digital Artists Worldwide," noted for photographic realism and attention to detail.</p>
+          <div class="about-bio-block">
+            <p class="about-bio">I'm a freelance key art designer and creative retoucher based in the UK. I work digitally: compositing and retouching, no hand painting or photography of my own. My work's been recognised in Lürzer's Archive's "200 Best Digital Artists Worldwide," noted for photographic realism and attention to detail.</p>
 
-        <p class="about-bio">More than 15 years retouching and finishing for leading agencies, studios and photographers. These days that's mostly key art and poster campaigns, for clients including Netflix, BBC, ITV, HBO Max, A&amp;E, Lionsgate, Sky Cinema and Prime Video.</p>
+            <p class="about-bio">More than 15 years retouching and finishing for leading agencies, studios and photographers. These days that's mostly key art and poster campaigns, for clients including Netflix, BBC, ITV, HBO Max, A&amp;E, Lionsgate, Sky Cinema and Prime Video.</p>
 
-        <p class="about-bio">I work directly with producers, agencies and marketing teams to turn a film or series into one image that has to do all the selling. Key Art Designer, the reference tool on this site, came out of that same day to day work, not as a side project disconnected from it.</p>
+            <p class="about-bio">I work directly with producers, agencies and marketing teams to turn a film or series into one image that has to do all the selling. Key Art Designer, the reference tool on this site, came out of that same day to day work, not as a side project disconnected from it.</p>
 
-        <p class="about-bio">Clean, photo real compositing and finishing, plus more complex creative manipulation and concept driven key art. What a campaign needs decides the approach, not one fixed style.</p>
+            <p class="about-bio">Clean, photo real compositing and finishing, plus more complex creative manipulation and concept driven key art. What a campaign needs decides the approach, not one fixed style.</p>
+          </div>
+        </div>
+
+        <div class="about-right">
+          <div class="contact-block">
+            <h2 class="contact-heading display">GET IN TOUCH</h2>
+            <p class="contact-sub">Tell me about the project and I'll get back to you.</p>
+            <form id="contactForm" class="contact-form" novalidate>
+              <div class="field">
+                <label for="contactName">Name <span aria-hidden="true">*</span></label>
+                <input type="text" id="contactName" name="name" required autocomplete="name" />
+              </div>
+              <div class="field">
+                <label for="contactEmail">Email <span aria-hidden="true">*</span></label>
+                <input type="email" id="contactEmail" name="email" required autocomplete="email" />
+              </div>
+              <div class="field">
+                <label for="contactMessage">Message</label>
+                <textarea id="contactMessage" name="message" rows="5"></textarea>
+              </div>
+              <button type="submit" class="about-cta contact-submit">Send message</button>
+              <p class="contact-status" id="contactStatus" role="status" aria-live="polite" hidden></p>
+            </form>
+            <p class="contact-fallback">Not wired up to email yet — for anything urgent in the meantime, reach out directly via <a href="https://freelanceretoucher.com/about-contact" target="_blank" rel="noreferrer">freelanceretoucher.com ↗</a>.</p>
+          </div>
+        </div>
       </div>
 
       <div class="client-marquee" aria-label="Clients">
@@ -82,28 +110,6 @@
           <img src="logos/fifa.webp" alt="FIFA" class="client-logo invert" />
           <img src="logos/bbcworldwide.webp" alt="BBC Worldwide" class="client-logo" />
         </div>
-      </div>
-
-      <div class="contact-block">
-        <h2 class="contact-heading display">GET IN TOUCH</h2>
-        <p class="contact-sub">Tell me about the project and I'll get back to you.</p>
-        <form id="contactForm" class="contact-form" novalidate>
-          <div class="field">
-            <label for="contactName">Name <span aria-hidden="true">*</span></label>
-            <input type="text" id="contactName" name="name" required autocomplete="name" />
-          </div>
-          <div class="field">
-            <label for="contactEmail">Email <span aria-hidden="true">*</span></label>
-            <input type="email" id="contactEmail" name="email" required autocomplete="email" />
-          </div>
-          <div class="field">
-            <label for="contactMessage">Message</label>
-            <textarea id="contactMessage" name="message" rows="5"></textarea>
-          </div>
-          <button type="submit" class="about-cta contact-submit">Send message</button>
-          <p class="contact-status" id="contactStatus" role="status" aria-live="polite" hidden></p>
-        </form>
-        <p class="contact-fallback">Not wired up to email yet — for anything urgent in the meantime, reach out directly via <a href="https://freelanceretoucher.com/about-contact" target="_blank" rel="noreferrer">freelanceretoucher.com ↗</a>.</p>
       </div>
     </div>
   </main>
