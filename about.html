@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About — Key Art Designer</title>
-  <meta name="description" content="Diego Angarita — key art designer and finisher based in the UK." />
+  <meta name="description" content="Diego Angarita — key art designer, movie poster finisher and creative retoucher based in the UK." />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0a0a%22/><path d=%22M58 20 L27 55 L44 55 L37 80 L74 42 L52 42 Z%22 fill=%22%23f2c230%22/></svg>" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -41,13 +41,47 @@
 
   <main>
     <div class="about-wrap">
-      <div class="about-photo display">DA</div>
-      <p class="about-bio">This is me. That was my work.</p>
-      <p class="about-bio">I'm Diego Angarita — a key art designer and retoucher based in the UK, working with Netflix, ITV, BBC, HBO Max, A&amp;E and Prime Video on film and TV campaigns.</p>
-      <div>
-        <a class="about-cta" href="https://freelanceretoucher.com/about-contact" target="_blank" rel="noreferrer">Get in touch ↗</a>
+      <img class="about-photo" src="about-photo.jpg" alt="Diego Angarita" width="160" height="160" />
+      <h1 class="about-name display">DIEGO ANGARITA</h1>
+      <p class="about-title">Key Art Designer, Movie Poster Finisher &amp; Creative Retoucher</p>
+
+      <div class="about-bio-block">
+        <p class="about-bio">I'm a freelance key art designer and creative retoucher based in the UK. I work digitally: compositing and retouching, no hand painting or photography of my own. My work's been recognised in Lürzer's Archive's "200 Best Digital Artists Worldwide," noted for photographic realism and attention to detail.</p>
+
+        <p class="about-bio">More than 15 years retouching and finishing for leading agencies, studios and photographers. These days that's mostly key art and poster campaigns, for clients including Netflix, BBC, ITV, HBO Max, A&amp;E, Lionsgate, Sky Cinema and Prime Video.</p>
+
+        <p class="about-bio">I work directly with producers, agencies and marketing teams to turn a film or series into one image that has to do all the selling. Key Art Designer, the reference tool on this site, came out of that same day to day work, not as a side project disconnected from it.</p>
+
+        <p class="about-bio">Clean, photo real compositing and finishing, plus more complex creative manipulation and concept driven key art. What a campaign needs decides the approach, not one fixed style.</p>
+      </div>
+
+      <div class="client-row" aria-label="Clients">
+        <span>Netflix</span><span>BBC</span><span>ITV</span><span>HBO Max</span><span>A&amp;E</span><span>Lionsgate</span><span>Sky Cinema</span><span>Prime Video</span>
+      </div>
+
+      <div class="contact-block">
+        <h2 class="contact-heading display">GET IN TOUCH</h2>
+        <p class="contact-sub">Tell me about the project and I'll get back to you.</p>
+        <form id="contactForm" class="contact-form" novalidate>
+          <div class="field">
+            <label for="contactName">Name <span aria-hidden="true">*</span></label>
+            <input type="text" id="contactName" name="name" required autocomplete="name" />
+          </div>
+          <div class="field">
+            <label for="contactEmail">Email <span aria-hidden="true">*</span></label>
+            <input type="email" id="contactEmail" name="email" required autocomplete="email" />
+          </div>
+          <div class="field">
+            <label for="contactMessage">Message</label>
+            <textarea id="contactMessage" name="message" rows="5"></textarea>
+          </div>
+          <button type="submit" class="about-cta contact-submit">Send message</button>
+          <p class="contact-status" id="contactStatus" role="status" aria-live="polite" hidden></p>
+        </form>
+        <p class="contact-fallback">Not wired up to email yet — for anything urgent in the meantime, reach out directly via <a href="https://freelanceretoucher.com/about-contact" target="_blank" rel="noreferrer">freelanceretoucher.com ↗</a>.</p>
       </div>
     </div>
   </main>
+  <script src="script.js"></script>
 </body>
 </html>

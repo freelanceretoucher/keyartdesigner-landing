@@ -106,3 +106,27 @@
     try { localStorage.setItem('keyart-density', String(newCols)); } catch (e) {}
   });
 })();
+
+// About page contact form. NOT WIRED TO EMAIL YET — Diego's planning to
+// connect this to a real keyartdesigner.com inbox later (see email hosting
+// discussion). For now this only validates client-side and shows an honest
+// status message; it doesn't send or store the submission anywhere. Swap
+// this handler for a real fetch() to a serverless endpoint once an address
+// exists.
+(function () {
+  var form = document.getElementById('contactForm');
+  var status = document.getElementById('contactStatus');
+  if (!form || !status) return;
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.checkValidity()) {
+      form.reportValidity();
+      return;
+    }
+    status.hidden = false;
+    status.classList.remove('error');
+    status.textContent = "This form isn't connected to email yet, so nothing was sent. Use the link below for now.";
+    form.reset();
+  });
+})();
