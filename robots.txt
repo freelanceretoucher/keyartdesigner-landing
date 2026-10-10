@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /admin.html
 
 # AI crawlers / assistants — explicitly allowed so the site can be cited
 # and summarised by AI search and chat assistants, not just classic search.

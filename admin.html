@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin — Key Art Designer</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2222%22 fill=%22%230a0a0a%22/><path d=%22M58 20 L27 55 L44 55 L37 80 L74 42 L52 42 Z%22 fill=%22%23f2c230%22/></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="navwrap">
+      <nav class="navlinks">
+        <a href="index.html"><span class="label">Work</span></a>
+        <a href="about.html"><span class="label">About</span></a>
+      </nav>
+      <a href="index.html" class="logo-mark">
+        <svg width="22" height="29" viewBox="0 0 26 34" aria-hidden="true"><path d="M15 0 L2 19 L11 19 L8 34 L24 14 L14 14 Z" fill="#f2c230"/></svg>
+        <span class="wordmark display"><span class="gold">KEY ART</span> <span class="white">DESIGNER</span></span>
+      </a>
+      <div class="navright">
+        <a class="tool-link" href="https://app.keyartdesigner.com" target="_blank" rel="noreferrer">Reference tool ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="admin-wrap">
+
+      <section id="loginPanel" class="admin-panel">
+        <h1 class="display admin-heading">Admin Login</h1>
+        <form id="loginForm" class="contact-form admin-form">
+          <div class="field">
+            <label for="loginEmail">Email</label>
+            <input type="email" id="loginEmail" name="email" required autocomplete="username" />
+          </div>
+          <div class="field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" name="password" required autocomplete="current-password" />
+          </div>
+          <button type="submit" class="about-cta contact-submit">Log in</button>
+          <p id="loginStatus" class="contact-status" hidden></p>
+        </form>
+      </section>
+
+      <section id="adminPanel" class="admin-panel" hidden>
+        <div class="admin-header">
+          <h1 class="display admin-heading">Manage Key Art</h1>
+          <button id="logoutBtn" class="admin-logout" type="button">Log out</button>
+        </div>
+
+        <form id="uploadForm" class="contact-form admin-form">
+          <div class="field">
+            <label for="posterFile">Image file</label>
+            <input type="file" id="posterFile" name="file" accept="image/*" required />
+          </div>
+          <div class="field">
+            <label for="posterTitle">Title</label>
+            <input type="text" id="posterTitle" name="title" required placeholder="e.g. Trigger Point — ITV" />
+          </div>
+          <div class="field">
+            <label for="posterAlt">Alt text (for accessibility &amp; SEO — leave blank to reuse the title)</label>
+            <input type="text" id="posterAlt" name="alt" placeholder="Trigger Point ITV crime drama key art, detective in rain" />
+          </div>
+          <div class="field">
+            <label for="posterTags">Tags / keywords, comma separated</label>
+            <input type="text" id="posterTags" name="tags" placeholder="thriller, ITV, crime drama, key art, poster design" />
+          </div>
+          <button type="submit" class="about-cta contact-submit" id="uploadSubmit">Publish</button>
+          <p id="uploadStatus" class="contact-status" hidden></p>
+        </form>
+
+        <h2 class="display admin-list-heading">Published (<span id="posterCount">0</span>)</h2>
+        <div id="posterList" class="admin-poster-list"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+  <script src="supabase-config.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -13,10 +13,15 @@
   var prevBtn = document.getElementById('lightboxPrev');
   var nextBtn = document.getElementById('lightboxNext');
 
-  var items = Array.prototype.slice.call(mosaic.querySelectorAll('figure img'));
+  // Queried live (not cached once at load) because the mosaic's images now
+  // arrive asynchronously from Supabase, well after this script runs.
+  function getItems() {
+    return Array.prototype.slice.call(mosaic.querySelectorAll('figure img'));
+  }
   var currentIndex = -1;
 
   function showIndex(i) {
+    var items = getItems();
     if (!items.length) return;
     currentIndex = (i + items.length) % items.length;
     var img = items[currentIndex];
@@ -26,6 +31,7 @@
   }
 
   function open(img) {
+    var items = getItems();
     var idx = items.indexOf(img);
     showIndex(idx === -1 ? 0 : idx);
     lightbox.classList.add('open');

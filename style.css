@@ -119,6 +119,12 @@ header {
   .mosaic figcaption { font-size: 13px; padding: 20px 10px 10px; }
 }
 
+.mosaic-loading, .mosaic-noscript {
+  text-align: center; padding: 60px 20px; color: var(--text-dim);
+  font-size: 14px; letter-spacing: 0.04em;
+}
+.mosaic-noscript a { color: var(--gold-500); border-bottom: 1px solid currentColor; }
+
 .density-bar {
   display: flex; align-items: center; justify-content: center; gap: 14px;
   padding: 14px 20px;
@@ -287,4 +293,43 @@ header {
 @media (max-width: 560px) {
   .about-wrap { padding: 56px 20px 80px; }
   .about-name { font-size: 28px; }
+}
+
+.admin-wrap { max-width: 640px; margin: 0 auto; padding: 56px 24px 96px; }
+.admin-heading { font-size: 30px; color: #fff; margin: 0 0 28px; }
+.admin-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 28px; }
+.admin-header .admin-heading { margin: 0; }
+.admin-logout {
+  background: none; border: 1px solid var(--ink-700); color: var(--text-dim);
+  border-radius: 999px; padding: 8px 18px; font-size: 12px; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; transition: border-color 0.15s, color 0.15s;
+}
+.admin-logout:hover { border-color: var(--gold-500); color: var(--gold-500); }
+.admin-form { margin-bottom: 20px; }
+.admin-form input[type="file"] {
+  background: var(--ink-900); border: 1px solid var(--ink-700); border-radius: 10px;
+  padding: 10px 14px; color: var(--text); font-family: 'Oswald', sans-serif; font-size: 14px;
+}
+.admin-list-heading { font-size: 20px; color: #fff; margin: 40px 0 16px; padding-top: 24px; border-top: 1px solid var(--ink-700); }
+.admin-list-loading { color: var(--text-dim); font-size: 14px; }
+.admin-poster-list { display: flex; flex-direction: column; gap: 14px; }
+.poster-card {
+  display: flex; gap: 14px; align-items: center;
+  background: var(--ink-900); border: 1px solid var(--ink-700); border-radius: 10px;
+  padding: 10px; overflow: hidden;
+}
+.poster-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; }
+.poster-card-body { flex: 1; min-width: 0; }
+.poster-card-title { margin: 0; font-size: 15px; color: var(--text); }
+.poster-card-tags { margin: 4px 0 0; font-size: 12px; color: var(--text-dim); overflow-wrap: break-word; }
+.poster-card-delete {
+  margin-left: auto; flex: none; background: none; border: 1px solid var(--ink-700);
+  color: #e2605a; border-radius: 999px; padding: 7px 14px; font-size: 11px;
+  letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
+  transition: border-color 0.15s, background 0.15s;
+}
+.poster-card-delete:hover { border-color: #e2605a; background: rgba(226, 96, 90, 0.1); }
+@media (max-width: 480px) {
+  .poster-card { flex-wrap: wrap; }
+  .poster-card-delete { margin-left: 0; }
 }
