@@ -55,14 +55,14 @@
 
         <form id="uploadForm" class="contact-form admin-form">
           <div class="field">
-            <label for="posterFile">Image file</label>
-            <input type="file" id="posterFile" name="file" accept="image/*" required />
+            <label for="posterFile">Image file(s)</label>
+            <input type="file" id="posterFile" name="file" accept="image/*" multiple required />
           </div>
-          <div class="field">
+          <div class="field" id="singleTitleField">
             <label for="posterTitle">Title</label>
-            <input type="text" id="posterTitle" name="title" required placeholder="e.g. Trigger Point — ITV" />
+            <input type="text" id="posterTitle" name="title" placeholder="e.g. Trigger Point — ITV" />
           </div>
-          <div class="field">
+          <div class="field" id="singleAltField">
             <label for="posterAlt">Alt text (for accessibility &amp; SEO — leave blank to reuse the title)</label>
             <input type="text" id="posterAlt" name="alt" placeholder="Trigger Point ITV crime drama key art, detective in rain" />
           </div>
@@ -70,11 +70,13 @@
             <label for="posterTags">Tags / keywords, comma separated</label>
             <input type="text" id="posterTags" name="tags" placeholder="thriller, ITV, crime drama, key art, poster design" />
           </div>
+          <p class="admin-hint" id="bulkHint" hidden>Publishing <span id="bulkFileCount">0</span> images, titled from their filenames for now. Any tags above go on all of them. Fill in exact titles, alt text and tags per image below whenever you've got a minute, nothing has to be finished now.</p>
           <button type="submit" class="about-cta contact-submit" id="uploadSubmit">Publish</button>
           <p id="uploadStatus" class="contact-status" hidden></p>
         </form>
 
         <h2 class="display admin-list-heading">Published (<span id="posterCount">0</span>)</h2>
+        <p class="admin-hint">Edit title, alt text or tags on anything below, then hit Save on that card. A <span class="poster-card-flag">needs SEO</span> tag marks images still missing alt text or tags.</p>
         <div id="posterList" class="admin-poster-list"></div>
       </section>
 

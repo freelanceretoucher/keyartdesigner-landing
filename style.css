@@ -310,20 +310,37 @@ header {
   background: var(--ink-900); border: 1px solid var(--ink-700); border-radius: 10px;
   padding: 10px 14px; color: var(--text); font-family: 'Oswald', sans-serif; font-size: 14px;
 }
-.admin-list-heading { font-size: 20px; color: #fff; margin: 40px 0 16px; padding-top: 24px; border-top: 1px solid var(--ink-700); }
+.admin-hint { font-size: 13px; color: var(--text-dim); line-height: 1.5; margin: 0 0 16px; }
+.admin-list-heading { font-size: 20px; color: #fff; margin: 40px 0 10px; padding-top: 24px; border-top: 1px solid var(--ink-700); }
 .admin-list-loading { color: var(--text-dim); font-size: 14px; }
 .admin-poster-list { display: flex; flex-direction: column; gap: 14px; }
 .poster-card {
-  display: flex; gap: 14px; align-items: center;
+  display: flex; gap: 14px; align-items: flex-start;
   background: var(--ink-900); border: 1px solid var(--ink-700); border-radius: 10px;
-  padding: 10px; overflow: hidden;
+  padding: 12px; overflow: hidden;
 }
-.poster-card img { width: 64px; height: 64px; object-fit: cover; border-radius: 6px; flex: none; }
-.poster-card-body { flex: 1; min-width: 0; }
-.poster-card-title { margin: 0; font-size: 15px; color: var(--text); }
-.poster-card-tags { margin: 4px 0 0; font-size: 12px; color: var(--text-dim); overflow-wrap: break-word; }
+.poster-card img { width: 72px; height: 72px; object-fit: cover; border-radius: 6px; flex: none; }
+.poster-card-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 8px; }
+.poster-edit-input {
+  width: 100%; background: var(--ink-800); border: 1px solid var(--ink-700); border-radius: 8px;
+  padding: 8px 10px; font-family: 'Oswald', sans-serif; font-size: 13px; color: var(--text);
+  outline: none; transition: border-color 0.15s;
+}
+.poster-edit-input:focus { border-color: var(--gold-500); }
+.poster-card-actions { display: flex; align-items: center; gap: 10px; margin-top: 2px; flex-wrap: wrap; }
+.poster-card-flag {
+  font-size: 10px; letter-spacing: 0.05em; text-transform: uppercase;
+  color: #e2605a; border: 1px solid #e2605a; border-radius: 999px; padding: 4px 10px;
+}
+.poster-card-save {
+  background: var(--gold-500); color: var(--ink-950); border: none; border-radius: 999px;
+  padding: 7px 16px; font-size: 11px; font-weight: 700; letter-spacing: 0.06em;
+  text-transform: uppercase; cursor: pointer; transition: background 0.15s;
+}
+.poster-card-save:hover { background: var(--gold-400); }
+.poster-card-save.saved { background: #4caf7d; color: #06281a; }
 .poster-card-delete {
-  margin-left: auto; flex: none; background: none; border: 1px solid var(--ink-700);
+  margin-left: auto; background: none; border: 1px solid var(--ink-700);
   color: #e2605a; border-radius: 999px; padding: 7px 14px; font-size: 11px;
   letter-spacing: 0.06em; text-transform: uppercase; cursor: pointer;
   transition: border-color 0.15s, background 0.15s;
