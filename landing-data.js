@@ -33,7 +33,7 @@
       const art=document.createElement('div');art.className='art';const i=document.createElement('img');i.loading='lazy';i.src=base.origin+'/storage/v1/object/public/posters/'+row.image_path.split('/').map(encodeURIComponent).join('/');i.alt=row.alt_text||row.title;art.append(i);
       const caption=document.createElement('div');caption.className='projectcaption';const h=document.createElement('h3');h.textContent=row.title;const arrow=document.createElement('span');arrow.textContent='↗';caption.append(h,arrow);a.append(art,caption);frag.append(a);
     }
-    if(frag.children.length)track.replaceChildren(frag);
+    if(frag.children.length)track.append(frag);
   };
   await Promise.allSettled([artwork(),portfolio()]);
   const script=document.createElement('script');script.src='landing-motion.js';document.body.append(script);
