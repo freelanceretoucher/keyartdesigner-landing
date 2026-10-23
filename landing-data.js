@@ -31,7 +31,7 @@
     for(const row of rows){if(!row.image_path||!row.title)continue;
       const a=document.createElement('a');a.className='project';a.href='https://www.freelanceretoucher.com/';a.target='_blank';a.rel='noreferrer';
       const art=document.createElement('div');art.className='art';const i=document.createElement('img');i.loading='lazy';i.src=base.origin+'/storage/v1/object/public/posters/'+row.image_path.split('/').map(encodeURIComponent).join('/');i.alt=row.alt_text||row.title;art.append(i);
-      const caption=document.createElement('div');caption.className='projectcaption';const h=document.createElement('h3');h.textContent=row.title;const arrow=document.createElement('span');arrow.textContent='↗';caption.append(h,arrow);a.append(art,caption);frag.append(a);
+      const caption=document.createElement('div');caption.className='projectcaption';const h=document.createElement('h3');h.textContent=row.title;const arrow=document.createElement('span');arrow.innerHTML='<svg class="external-arrow" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true" focusable="false" style="display:inline-block;vertical-align:-0.05em;flex-shrink:0"><path d="M3 13 13 3M3 3h10v10"/></svg>';caption.append(h,arrow);a.append(art,caption);frag.append(a);
     }
     if(frag.children.length)track.append(frag);
   };
