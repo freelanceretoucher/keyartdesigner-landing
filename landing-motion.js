@@ -90,7 +90,7 @@
     if (!canMove()) return;
     if (last && now > holdUntil) {
       const cycle = track.children[original.length].offsetLeft - track.children[0].offsetLeft;
-      carry += Math.min(now - last, 50) * .022;
+    carry += Math.min(now - last, 50) * .028;
       const step = Math.floor(carry);
       carousel.scrollLeft += step;
       carry -= step;
